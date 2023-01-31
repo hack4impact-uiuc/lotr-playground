@@ -1,12 +1,14 @@
-import styles from "./index.module.css";
-import { type NextPage } from "next";
-import Head from "next/head";
-import Link from "next/link";
+import styles from '../styles/index.module.css';
+import { type NextPage } from 'next';
+import Head from 'next/head';
+import Link from 'next/link';
 
-import { api } from "../utils/api";
+import { api } from '../utils/api';
 
 const Home: NextPage = () => {
-  const hello = api.example.hello.useQuery({ text: "from tRPC" });
+  const hello = api.example.hello.useQuery({ text: 'from tRPC' });
+  const characters = api.example.getAll.useQuery();
+  console.log('characters', characters);
 
   return (
     <>
@@ -45,7 +47,7 @@ const Home: NextPage = () => {
             </Link>
           </div>
           <p className={styles.showcaseText}>
-            {hello.data ? hello.data.greeting : "Loading tRPC query..."}
+            {hello.data ? hello.data.greeting : 'Loading tRPC query...'}
           </p>
         </div>
       </main>
