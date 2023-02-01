@@ -5,7 +5,7 @@ import { api } from '../utils/api';
 
 const Home: NextPage = () => {
   const hello = api.characterRouter.hello.useQuery({ name: 'Meraki' });
-  const characters = api.characterRouter.getAll.useQuery();
+  const count = api.characterRouter.count.useQuery();
 
   return (
     <Center minH={'100vh'}>
@@ -14,7 +14,7 @@ const Home: NextPage = () => {
           {hello.data?.greeting}
         </Heading>
         <Heading as="h2" size="md">
-          There are {characters?.data?.length ?? 0} characters in the DB.
+          There are {count?.data ?? 0} characters in the DB.
         </Heading>
       </VStack>
     </Center>

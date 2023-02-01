@@ -10,8 +10,8 @@ export const characterRouter = createTRPCRouter({
         greeting: `✨ Hello ${input.name} ✨`,
       };
     }),
-  getAll: publicProcedure.query(async ({ ctx }) => {
-    const characters = await ctx.prisma.character.findMany();
-    return characters;
+  count: publicProcedure.query(async ({ ctx }) => {
+    const count = await ctx.prisma.character.count();
+    return count;
   }),
 });
