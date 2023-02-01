@@ -2,12 +2,12 @@ import { z } from 'zod';
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
 
-export const exampleRouter = createTRPCRouter({
+export const characterRouter = createTRPCRouter({
   hello: publicProcedure
-    .input(z.object({ text: z.string() }))
+    .input(z.object({ name: z.string() }))
     .query(({ input }) => {
       return {
-        greeting: `Hello ${input.text}`,
+        greeting: `✨ Hello ${input.name} ✨`,
       };
     }),
   getAll: publicProcedure.query(async ({ ctx }) => {
