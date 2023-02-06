@@ -1,3 +1,4 @@
+import '@fontsource/inter';
 import { type AppType } from 'next/app';
 import { ChakraProvider } from '@chakra-ui/react';
 
