@@ -24,4 +24,8 @@ export const characterRouter = createTRPCRouter({
       });
       return character;
     }),
+  getAllCharacters: publicProcedure.query(async ({ ctx }) => {
+    const allCharacters = await ctx.prisma.character.findMany();
+    return allCharacters;
+  }),
 });
