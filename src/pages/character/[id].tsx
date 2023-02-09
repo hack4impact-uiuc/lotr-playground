@@ -42,28 +42,27 @@ const Post = () => {
               {characterInfo?.name}
             </Heading>
 
-            <Text py="2" color="white">
+            <Heading size="sm" color="white">
               General Information
-            </Text>
+            </Heading>
+            <Card
+              direction={{ base: 'column' }}
+              overflow="hidden"
+              variant="outline"
+              backgroundColor="rgba(0, 0, 0, 0.80)"
+              border="none"
+            >
+              <Text py="1" color="white">
+                Gender: {characterInfo?.gender}
+              </Text>
+              <Text py="1" color="white">
+                Race: {characterInfo?.race}
+              </Text>
+              <Text py="1" color="white">
+                Realm: {characterInfo?.realm}
+              </Text>
+            </Card>
           </CardBody>
-
-          <Card
-            direction={{ base: 'column' }}
-            overflow="hidden"
-            variant="outline"
-            bg="gray"
-            borderRadius="0"
-          >
-            <Text py="1" color="white">
-              Gender: {characterInfo?.gender}
-            </Text>
-            <Text py="1" color="white">
-              Race: {characterInfo?.race}
-            </Text>
-            <Text py="1" color="white">
-              Realm: {characterInfo?.realm}
-            </Text>
-          </Card>
 
           <CardFooter>
             <Button variant="solid" colorScheme="yellow" borderRadius="0">
