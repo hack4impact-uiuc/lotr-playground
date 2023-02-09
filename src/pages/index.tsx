@@ -5,7 +5,6 @@ import {
   VStack,
   CardBody,
   Image,
-  Stack,
   Grid,
 } from '@chakra-ui/react';
 import { type NextPage } from 'next';
