@@ -15,7 +15,12 @@ const config = {
     defaultLocale: 'en',
   },
   images: {
-    domains: ['i.pinimg.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
   },
 };
 

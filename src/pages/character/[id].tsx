@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { api } from '../../utils/api';
 
@@ -11,6 +10,11 @@ import {
   Heading,
   Text,
   Button,
+  Box,
+  Flex,
+  Center,
+  Image,
+  AspectRatio,
 } from '@chakra-ui/react';
 
 const Post = () => {
@@ -22,64 +26,84 @@ const Post = () => {
     id: id ? +id : 0,
   });
 
-  // const allCharacters = api.characterRouter.getAllCharacters.useQuery();
-
-  // console.log(characterRequest.data);
   const characterInfo = characterRequest.data;
 
   return (
-    <div style={{ display: 'flex' }}>
-      <Card
-        direction={{ base: 'column', sm: 'row' }}
-        overflow="hidden"
-        variant="outline"
-        bg="black"
-        borderRadius="0"
-      >
-        <Stack>
-          <CardBody>
-            <Heading size="md" color="white">
-              {characterInfo?.name}
-            </Heading>
+    <Box w="100%" h="100vh" bg="black">
+      <Center pb={4}>
+        <Image src="/LordOfRingLogo.png" alt="Logo" width="300px" />
+      </Center>
+      <Center>
+        <Card
+          direction={{ base: 'column', sm: 'row' }}
+          overflow="hidden"
+          variant="outline"
+          bg="black"
+          borderRadius="0"
+          border="none"
+        >
+          <Stack>
+            <CardBody>
+              <Heading color="white" py={2} size="lg">
+                {characterInfo?.name}
+              </Heading>
 
-            <Heading size="sm" color="white">
-              General Information
-            </Heading>
-            <Card
-              direction={{ base: 'column' }}
-              overflow="hidden"
-              variant="outline"
-              backgroundColor="rgba(0, 0, 0, 0.80)"
-              border="none"
-            >
-              <Text py="1" color="white">
-                Gender: {characterInfo?.gender}
-              </Text>
-              <Text py="1" color="white">
-                Race: {characterInfo?.race}
-              </Text>
-              <Text py="1" color="white">
-                Realm: {characterInfo?.realm}
-              </Text>
-            </Card>
-          </CardBody>
+              <Heading size="sm" color="white" py={2}>
+                General Information
+              </Heading>
+              <Box
+                overflow="hidden"
+                backgroundColor="gray.900"
+                border="none"
+                borderRadius="none"
+                p={3}
+                mb={3}
+              >
+                <Text py="1" color="white">
+                  Gender: {characterInfo?.gender}
+                </Text>
+                <Text py="1" color="white">
+                  Race: {characterInfo?.race}
+                </Text>
+                <Text py="1" color="white">
+                  Realm: {characterInfo?.realm}
+                </Text>
+              </Box>
 
-          <CardFooter>
-            <Button variant="solid" colorScheme="yellow" borderRadius="0">
-              Edit Character
-            </Button>
-          </CardFooter>
-        </Stack>
-        {characterInfo && (
-          <Image
-            src={characterInfo.imageUrl}
-            alt={`Picture of ${characterInfo.name}`}
-            width={300}
-            height={400}
-          />
-        )}
-      </Card>
-    </div>
+              <Heading size="sm" color="white" py={2}>
+                Wiki URL
+              </Heading>
+              <Box
+                overflow="hidden"
+                backgroundColor="gray.900"
+                border="none"
+                borderRadius="none"
+                p={2}
+              >
+                <Text color="white">{characterInfo?.wikiUrl}</Text>
+              </Box>
+            </CardBody>
+
+            <CardFooter>
+              <Button variant="solid" colorScheme="yellow" borderRadius="0">
+                Edit Character
+              </Button>
+            </CardFooter>
+          </Stack>
+          {characterInfo && (
+            <Center boxSize="sm">
+              <AspectRatio maxH="350px" ratio={3 / 4} flex="1 1 auto">
+                <Image
+                  src={characterInfo.imageUrl}
+                  alt={`Picture of ${characterInfo.name}`}
+                  objectFit="cover"
+                />
+              </AspectRatio>
+            </Center>
+          )}
+        </Card>
+      </Center>
+    </Box>
   );
 };
 
