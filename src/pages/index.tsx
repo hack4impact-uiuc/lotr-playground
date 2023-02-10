@@ -1,7 +1,6 @@
-import { Center, Heading, useDisclosure, VStack } from '@chakra-ui/react';
+import { Center, Heading, VStack } from '@chakra-ui/react';
 import { type NextPage } from 'next';
 import AddCharacterForm from '../components/AddCharacterForm';
-import ButtonComp from '../components/Button';
 
 import { api } from '../utils/api';
 
