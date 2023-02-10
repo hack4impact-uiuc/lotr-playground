@@ -14,4 +14,18 @@ export const characterRouter = createTRPCRouter({
     const count = await ctx.prisma.character.count();
     return count;
   }),
+  getCharacter: publicProcedure
+    .input(z.object({ id: z.number() }))
+    .query(async ({ ctx, input }) => {
+      // Implement the getCharacter procedure in src/server/api/routers/character.ts so that the procedure returns a character given the character's id
+      // https://www.prisma.io/docs/reference/api-reference/prisma-client-reference#findunique
+      const character = await ctx.prisma.character.findUnique({
+        where: { id: input.id },
+      });
+      return character;
+    }),
+  getAllCharacters: publicProcedure.query(async ({ ctx }) => {
+    const allCharacters = await ctx.prisma.character.findMany();
+    return allCharacters;
+  }),
 });
