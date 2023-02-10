@@ -5,8 +5,8 @@ type ButtonProps = {
   buttonText: string;
 };
 
-const ButtonComp = (props: ButtonProps) => {
-  return <Button onClick={props.onClick}>{props.buttonText}</Button>;
+const ButtonComp = ({ onClick, buttonText }: ButtonProps) => {
+  return <Button onClick={onClick}>{buttonText}</Button>;
 };
 
 export default ButtonComp;

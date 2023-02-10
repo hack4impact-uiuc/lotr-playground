@@ -3,20 +3,16 @@ import {
   ModalOverlay,
   ModalContent,
   ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
   useDisclosure,
-  Button,
 } from '@chakra-ui/react';
+import ButtonComp from './Button';
 
-const BasicUsage = () => {
+const AddCharacterForm = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
-      <Button onClick={onOpen}>Open Modal</Button>
-
+      <ButtonComp onClick={onOpen} buttonText="Add a character" />
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
@@ -27,4 +23,4 @@ const BasicUsage = () => {
   );
 };
 
-export default BasicUsage;
+export default AddCharacterForm;
