@@ -11,11 +11,13 @@ import { type NextPage } from 'next';
 
 import { api } from '../utils/api';
 
+
+
 const Home: NextPage = () => {
   const characters = api.characterRouter.getCharacters.useQuery()?.data;
 
   return (
-    <Center minH={'100vh'}>
+    <Center minH={'100vh'} backgroundColor="gray.900">
       <VStack spacing={5}>
         <Grid maxWidth="80%" templateColumns="repeat(3, 5fr)" gap={5}>
           {characters &&
@@ -31,8 +33,8 @@ const Home: NextPage = () => {
                         src={character.imageUrl}
                         alt={character.name}
                       />
-                      <Center _hover={{ bg: 'yellow.400', color: 'black' }}>
-                        <Heading size="md" margin={5}>
+                      <Center bgColor='background' color='white' _hover={{ bg: 'gold', color: 'gray.900' }}>
+                        <Heading size="md" margin={5} fontFamily='heading'>
                           {' '}
                           {character.name}{' '}
                         </Heading>
