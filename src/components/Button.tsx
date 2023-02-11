@@ -1,12 +1,22 @@
 import { Button } from '@chakra-ui/react';
 
-type ButtonProps = {
+interface ButtonProps {
   onClick: () => void;
   buttonText: string;
+}
+
+const ButtonTemp = ({ onClick, buttonText }: ButtonProps) => {
+  return (
+    <Button
+      borderRadius={0}
+      size={'lg'}
+      width={'100%'}
+      colorScheme="yellow"
+      onClick={onClick}
+    >
+      {buttonText}
+    </Button>
+  );
 };
 
-const ButtonComp = ({ onClick, buttonText }: ButtonProps) => {
-  return <Button onClick={onClick}>{buttonText}</Button>;
-};
-
-export default ButtonComp;
+export default ButtonTemp;

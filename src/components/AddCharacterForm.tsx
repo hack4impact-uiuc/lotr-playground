@@ -12,45 +12,37 @@ import {
   Button,
   ModalCloseButton,
 } from '@chakra-ui/react';
-import ButtonComp from './Button';
+import ButtonTemp from './Button';
+import FormInput from './FormInput';
 
 const AddCharacterForm = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
-      <ButtonComp onClick={onOpen} buttonText="Add a character" />
+      <ButtonTemp onClick={onOpen} buttonText="Add a Character" />
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent bg={'gray.800'}>
-          <ModalHeader textColor={'white'}>Add a character </ModalHeader>
+        <ModalContent bg={'black'}>
+          <ModalHeader textColor={'white'}>Add a Character</ModalHeader>
           <ModalCloseButton color={'white'} />
           <VStack p={4} spacing={4}>
-            <FormControl>
-              <Input placeholder="Name" textColor={'white'} />
-            </FormControl>
-            <FormControl>
-              <Input placeholder="Gender" textColor={'white'} />
-            </FormControl>
+            <FormInput placeholder="Name" />
+            <FormInput placeholder="Gender" />
             <HStack>
-              <FormControl>
-                <Input placeholder="Race" textColor={'white'} />
-              </FormControl>
-              <FormControl>
-                <Input placeholder="Realm" textColor={'white'} />
-              </FormControl>
+              <FormInput placeholder="Race" />
+              <FormInput placeholder="Realm" />
             </HStack>
-            <FormControl>
-              <Input placeholder="Wiki URL" textColor={'white'} />
-            </FormControl>
-            <FormControl>
-              <Input placeholder="Image URL" textColor={'white'} />
-            </FormControl>
+            <FormInput placeholder="Wiki URL" />
+            <FormInput placeholder="Image URL" />
           </VStack>
           <WrapItem pl={4} pr={4} pb={4}>
-            <Button width={'100%'} colorScheme="yellow">
-              Submit
-            </Button>
+            <ButtonTemp
+              onClick={() => {
+                alert('Submitted');
+              }}
+              buttonText={'Submit'}
+            />
           </WrapItem>
         </ModalContent>
       </Modal>
