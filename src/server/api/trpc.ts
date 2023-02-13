@@ -16,7 +16,16 @@
  * processing a request
  *
  */
+
+/**
+ * 2. INITIALIZATION
+ *
+ * This is where the trpc api is initialized, connecting the context and
+ * transformer
+ */
+import { initTRPC } from '@trpc/server';
 import { type CreateNextContextOptions } from '@trpc/server/adapters/next';
+import superjson from 'superjson';
 
 import { prisma } from '../db';
 
@@ -31,6 +40,7 @@ type CreateContextOptions = Record<string, never>;
  * - trpc's `createSSGHelpers` where we don't have req/res
  * @see https://create.t3.gg/en/usage/trpc#-servertrpccontextts
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const createInnerTRPCContext = (_opts: CreateContextOptions) => {
   return {
     prisma,
@@ -42,18 +52,10 @@ const createInnerTRPCContext = (_opts: CreateContextOptions) => {
  * process every request that goes through your tRPC endpoint
  * @link https://trpc.io/docs/context
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const createTRPCContext = (_opts: CreateNextContextOptions) => {
   return createInnerTRPCContext({});
 };
-
-/**
- * 2. INITIALIZATION
- *
- * This is where the trpc api is initialized, connecting the context and
- * transformer
- */
-import { initTRPC } from '@trpc/server';
-import superjson from 'superjson';
 
 const t = initTRPC.context<typeof createTRPCContext>().create({
   transformer: superjson,
