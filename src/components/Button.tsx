@@ -1,4 +1,4 @@
-import { Button } from '@chakra-ui/react';
+import { Button as DefaultButton } from '@chakra-ui/react';
 
 interface ButtonProps {
   onClick: () => void;
@@ -7,7 +7,7 @@ interface ButtonProps {
 
 const ButtonTemp = ({ onClick, buttonText }: ButtonProps) => {
   return (
-    <Button
+    <DefaultButton
       borderRadius={0}
       size={'lg'}
       width={'100%'}
@@ -15,7 +15,7 @@ const ButtonTemp = ({ onClick, buttonText }: ButtonProps) => {
       onClick={onClick}
     >
       {buttonText}
-    </Button>
+    </DefaultButton>
   );
 };
 

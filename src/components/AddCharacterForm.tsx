@@ -5,11 +5,8 @@ import {
   ModalHeader,
   useDisclosure,
   VStack,
-  Input,
-  FormControl,
   HStack,
   WrapItem,
-  Button,
   ModalCloseButton,
 } from '@chakra-ui/react';
 import ButtonTemp from './Button';
