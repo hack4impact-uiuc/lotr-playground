@@ -17,16 +17,16 @@ const Home: NextPage = () => {
   return (
     <Center minH={'100vh'} backgroundColor="gray.900">
       <VStack spacing={5}>
-        <Grid maxWidth="80%" templateColumns="repeat(3, 5fr)" gap={5}>
+        <Grid maxW="80%" templateColumns="repeat(3, 5fr)" gap={5}>
           {characters &&
             characters.map((character) => {
               return (
                 <a href={`/character/${character.id}`} key={character.name}>
-                  <Card width="100%" borderRadius={0}>
-                    <CardBody width="100%" margin={0} padding={0}>
+                  <Card w="100%" borderRadius={0}>
+                    <CardBody w="100%" m={0} p={0}>
                       <Image
-                        height={200}
-                        width={300}
+                        h={200}
+                        w={300}
                         objectFit="cover"
                         src={character.imageUrl}
                         alt={character.name}
@@ -36,9 +36,8 @@ const Home: NextPage = () => {
                         color="white"
                         _hover={{ bg: 'gold', color: 'gray.900' }}
                       >
-                        <Heading size="md" margin={5} fontFamily="heading">
-                          {' '}
-                          {character.name}{' '}
+                        <Heading size="md" m={5} fontFamily="heading">
+                          {character.name}
                         </Heading>
                       </Center>
                     </CardBody>
