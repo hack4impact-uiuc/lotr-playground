@@ -21,7 +21,21 @@
     "prettier"
   ],
   "rules": {
-    "@typescript-eslint/consistent-type-imports": "warn"
-    // "@typescript-eslint/no-unused-vars": "error"
+    "@typescript-eslint/consistent-type-imports": "warn",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-misused-promises": [
+      "error",
+      {
+        "checksVoidReturn": false
+      }
+    ],
+    "react/jsx-curly-brace-presence": [
+      "error",
+      {
+        "props": "never",
+        "children": "never",
+        "propElementValues": "always"
+      }
+    ]
   }
 }

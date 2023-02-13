@@ -1,11 +1,11 @@
 import {
   Card,
-  Center,
-  Heading,
-  VStack,
   CardBody,
-  Image,
+  Center,
   Grid,
+  Heading,
+  Image,
+  VStack,
 } from '@chakra-ui/react';
 import { type NextPage } from 'next';
 
@@ -15,7 +15,7 @@ const Home: NextPage = () => {
   const characters = api.characterRouter.getCharacters.useQuery()?.data;
 
   return (
-    <Center minH={'100vh'} backgroundColor="gray.900">
+    <Center minH="100vh" backgroundColor="gray.900">
       <VStack spacing={5}>
         <Grid maxW="80%" templateColumns="repeat(3, 5fr)" gap={5}>
           {characters &&

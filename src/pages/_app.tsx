@@ -1,9 +1,9 @@
+import { ChakraProvider } from '@chakra-ui/react';
 import '@fontsource/inter';
 import { type AppType } from 'next/app';
-import { ChakraProvider } from '@chakra-ui/react';
 
-import { api } from '../utils/api';
 import theme from '../styles/theme';
+import { api } from '../utils/api';
 
 const LOTRApp: AppType = ({ Component, pageProps }) => {
   return (
