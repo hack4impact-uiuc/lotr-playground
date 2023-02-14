@@ -1,14 +1,15 @@
 import {
+  HStack,
   Modal,
-  ModalOverlay,
+  ModalCloseButton,
   ModalContent,
   ModalHeader,
-  useDisclosure,
+  ModalOverlay,
   VStack,
-  HStack,
   WrapItem,
-  ModalCloseButton,
+  useDisclosure,
 } from '@chakra-ui/react';
+
 import ButtonTemp from './Button';
 import FormInput from './FormInput';
 
@@ -17,7 +18,7 @@ const AddCharacterForm = () => {
 
   return (
     <>
-      <ButtonTemp onClick={onOpen} buttonText="Add a Character" />
+      <ButtonTemp onClick={onOpen} buttonText="Add Character" />
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent bg="black">

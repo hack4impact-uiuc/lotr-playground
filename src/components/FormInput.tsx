@@ -1,4 +1,4 @@
-import { Input, FormControl } from '@chakra-ui/react';
+import { FormControl, Input } from '@chakra-ui/react';
 
 interface FormInputProps {
   placeholder: string;

@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Card,
   CardBody,
   Center,
@@ -11,8 +10,8 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { type NextPage } from 'next';
-import AddCharacterForm from '../components/AddCharacterForm';
 
+import AddCharacterForm from '../components/AddCharacterForm';
 import SearchBar from '../components/SearchBar';
 import { api } from '../utils/api';
 
@@ -36,7 +35,7 @@ const Home: NextPage = () => {
         top="247px"
         bg="linear-gradient(180deg, rgba(10, 13, 14, 0) 0%, #131617 31.77%)"
       />
-      <VStack spacing={5} w="45%" pt="5%" pb="5%">
+      <VStack spacing={5} w="45%" pt="2%" pb="5%">
         <Image
           position="relative"
           w="45%"
@@ -44,12 +43,13 @@ const Home: NextPage = () => {
           alt="Lord of the Rings Logo"
         />
         <Flex direction="row" justify="flex-end" w="100%">
-          <Button bgColor="gold" color="black" borderRadius={0}>
+          {/* <Button bgColor="gold" color="black" borderRadius={0}>
             Add Character
-          </Button>
+          </Button> */}
+          <AddCharacterForm />
+
         </Flex>
         <SearchBar />
-        <AddCharacterForm />
         <Grid templateColumns="repeat(3, 5fr)" gap={5}>
           {characters &&
             characters.map((character) => {

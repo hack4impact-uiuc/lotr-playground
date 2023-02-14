@@ -7,7 +7,13 @@ const SearchBar = () => {
       <InputLeftElement pointerEvents="none">
         <SearchIcon color="gray.300" />
       </InputLeftElement>
-      <Input type="text" w="100%" borderRadius={0} bg="background" color="white" />
+      <Input
+        type="text"
+        w="100%"
+        borderRadius={0}
+        bg="background"
+        color="white"
+      />
     </InputGroup>
   );
 };
