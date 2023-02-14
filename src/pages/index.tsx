@@ -11,6 +11,7 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { type NextPage } from 'next';
+import AddCharacterForm from '../components/AddCharacterForm';
 
 import SearchBar from '../components/SearchBar';
 import { api } from '../utils/api';
@@ -48,6 +49,7 @@ const Home: NextPage = () => {
           </Button>
         </Flex>
         <SearchBar />
+        <AddCharacterForm />
         <Grid templateColumns="repeat(3, 5fr)" gap={5}>
           {characters &&
             characters.map((character) => {

@@ -6,7 +6,7 @@
     "build": "next build",
     "dev": "next dev",
     "postinstall": "prisma generate",
-    "lint": "next lint && eslint --fix --max-warnings=0 && prettier --config .prettierrc.json '**/*.{tsx,ts}' --write",
+    "lint": "next lint && eslint --fix --max-warnings=0 && prettier --config .prettierrc.json **/*.{tsx,ts} --write",
     "start": "next start",
     "prepare": "husky install"
   },
