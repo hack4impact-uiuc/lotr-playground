@@ -18,4 +18,11 @@ export const characterRouter = createTRPCRouter({
     const characters = await ctx.prisma.character.findMany();
     return characters;
   }),
+  searchCharacters: publicProcedure
+    .input(z.object({ searchInput: z.string() }))
+    .query(async ({ ctx, input }) => {
+      const searchInput = `%${ input.searchInput }%`
+      const characters = await ctx.prisma.$queryRaw`SELECT * FROM "Character" WHERE name LIKE ${searchInput}`
+      return characters;
+  }),
 });
