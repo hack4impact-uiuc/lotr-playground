@@ -9,8 +9,8 @@ const ButtonTemp = ({ onClick, buttonText }: ButtonProps) => {
   return (
     <DefaultButton
       borderRadius={0}
-      size={'lg'}
-      width={'100%'}
+      size="lg"
+      width="100%"
       colorScheme="yellow"
       onClick={onClick}
     >

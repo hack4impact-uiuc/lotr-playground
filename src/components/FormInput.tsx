@@ -8,11 +8,11 @@ const FormInput = ({ placeholder }: FormInputProps) => {
   return (
     <FormControl>
       <Input
-        size={'lg'}
+        size="lg"
         border={0}
-        bg={'gray.700'}
+        bg="gray.700"
         placeholder={placeholder}
-        textColor={'white'}
+        textColor="white"
         borderRadius={0}
       />
     </FormControl>
