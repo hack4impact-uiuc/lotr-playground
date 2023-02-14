@@ -12,6 +12,7 @@ import {
 import ButtonTemp from './Button';
 import FormInput from './FormInput';
 
+
 const AddCharacterForm = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 

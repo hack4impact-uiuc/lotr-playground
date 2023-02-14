@@ -10,10 +10,11 @@ import {
 import { type NextPage } from 'next';
 import AddCharacterForm from '../components/AddCharacterForm';
 
+
 import { api } from '../utils/api';
 
 const Home: NextPage = () => {
-  const characters = api.characterRouter.getCharacters.useQuery()?.data;
+  const characters = api.characterRouter.getCharacters.useQuery()?.data;  
 
   return (
     <Center minH="100vh" backgroundColor="gray.900">
