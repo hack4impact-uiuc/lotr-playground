@@ -7,6 +7,7 @@ const theme = extendTheme({
   },
   colors: {
     gold: '#FDBF0E',
+    background: '#212121',
   },
 });
 

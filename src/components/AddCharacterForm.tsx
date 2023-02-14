@@ -20,9 +20,9 @@ const AddCharacterForm = () => {
       <ButtonTemp onClick={onOpen} buttonText="Add a Character" />
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent bg={'black'}>
-          <ModalHeader textColor={'white'}>Add a Character</ModalHeader>
-          <ModalCloseButton color={'white'} />
+        <ModalContent bg="black">
+          <ModalHeader textColor="white">Add a Character</ModalHeader>
+          <ModalCloseButton color="white" />
           <VStack p={4} spacing={4}>
             <FormInput placeholder="Name" />
             <FormInput placeholder="Gender" />
@@ -38,7 +38,7 @@ const AddCharacterForm = () => {
               onClick={() => {
                 alert('Submitted');
               }}
-              buttonText={'Submit'}
+              buttonText="Submit"
             />
           </WrapItem>
         </ModalContent>
