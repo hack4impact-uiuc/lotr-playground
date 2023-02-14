@@ -8,6 +8,7 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { type NextPage } from 'next';
+import AddCharacterForm from '../components/AddCharacterForm';
 
 import { api } from '../utils/api';
 
@@ -17,6 +18,7 @@ const Home: NextPage = () => {
   return (
     <Center minH="100vh" backgroundColor="gray.900">
       <VStack spacing={5}>
+        <AddCharacterForm />
         <Grid maxW="80%" templateColumns="repeat(3, 5fr)" gap={5}>
           {characters &&
             characters.map((character) => {
