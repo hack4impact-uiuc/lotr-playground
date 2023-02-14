@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import {
   Modal,
   ModalOverlay,
@@ -14,6 +16,12 @@ import FormInput from './FormInput';
 
 const AddCharacterForm = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [name, setName] = useState('');
+  const [gender, setGender] = useState('');
+  const [race, setRace] = useState('');
+  const [realm, setRealm] = useState('');
+  const [wikiUrl, setWikiUrl] = useState('');
+  const [imageUrl, setImageUrl] = useState('');
 
   return (
     <>
@@ -24,14 +32,30 @@ const AddCharacterForm = () => {
           <ModalHeader textColor="white">Add a Character</ModalHeader>
           <ModalCloseButton color="white" />
           <VStack p={4} spacing={4}>
-            <FormInput placeholder="Name" />
-            <FormInput placeholder="Gender" />
+            <FormInput placeholder="Name" value={name} setValue={setName} />
+            <FormInput
+              placeholder="Gender"
+              value={gender}
+              setValue={setGender}
+            />
             <HStack>
-              <FormInput placeholder="Race" />
-              <FormInput placeholder="Realm" />
+              <FormInput placeholder="Race" value={race} setValue={setRace} />
+              <FormInput
+                placeholder="Realm"
+                value={realm}
+                setValue={setRealm}
+              />
             </HStack>
-            <FormInput placeholder="Wiki URL" />
-            <FormInput placeholder="Image URL" />
+            <FormInput
+              placeholder="Wiki URL"
+              value={wikiUrl}
+              setValue={setWikiUrl}
+            />
+            <FormInput
+              placeholder="Image URL"
+              value={imageUrl}
+              setValue={setImageUrl}
+            />
           </VStack>
           <WrapItem pl={4} pr={4} pb={4}>
             <ButtonTemp
