@@ -20,7 +20,7 @@ const Home: NextPage = () => {
   const characters = api.characterRouter.getCharacters.useQuery()?.data;
 
   return (
-    <Center minH="100vh" backgroundColor="gray.900">
+    <Center minH="100vh" bgColor="#131616">
       <Image
         top={0}
         linear-gradient="(135deg, #50A68480 30%, #115E6780 90%)"
@@ -36,7 +36,7 @@ const Home: NextPage = () => {
         top="247px"
         bg="linear-gradient(180deg, rgba(10, 13, 14, 0) 0%, #131617 31.77%)"
       />
-      <VStack spacing={5} w="45%">
+      <VStack spacing={5} w="45%" pt="5%" pb="5%">
         <Image
           position="relative"
           w="45%"
