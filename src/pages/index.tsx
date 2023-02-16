@@ -10,13 +10,23 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { type NextPage } from 'next';
+import { useState, useEffect } from 'react';
 
 import AddCharacterForm from '../components/AddCharacterForm';
 import SearchBar from '../components/SearchBar';
 import { api } from '../utils/api';
 
 const Home: NextPage = () => {
-  const characters = api.characterRouter.getCharacters.useQuery()?.data;
+  const [characters, setCharacters] = useState<Character[] | undefined>();
+
+  useEffect(() => {
+    setCharacters(api.characterRouter.getCharacters.useQuery()?.data);
+  }, []);
+
+  const handleSubmit = async (searchInput : string) => {
+    const res = await api.characterRouter.searchCharacters.useQuery({searchInput})?.data as Character[] | undefined;
+    setCharacters(res);
+  }
 
   return (
     <Center minH="100vh" bgColor="#131616">
@@ -49,7 +59,7 @@ const Home: NextPage = () => {
           <AddCharacterForm />
 
         </Flex>
-        <SearchBar />
+        <SearchBar handleSubmit={handleSubmit} />
         <Grid templateColumns="repeat(3, 5fr)" gap={5}>
           {characters &&
             characters.map((character) => {
@@ -85,3 +95,13 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+interface Character {
+  id: number,
+  name: string,
+  gender: string,
+  race: string,
+  realm: string,
+  wikiUrl: string,
+  imageUrl: string,
+}
